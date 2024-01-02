@@ -1,0 +1,319 @@
+[gd_scene load_steps=20 format=3 uid="uid://bsipa48o8ve45"]
+
+[ext_resource type="Script" path="res://Scenes/Player/Viyons/Viyonix/viyon01.gd" id="1_0s3l5"]
+[ext_resource type="Texture2D" uid="uid://dauclq1xipntr" path="res://Assets/Viyon01-b.png" id="2_25q2b"]
+[ext_resource type="Texture2D" uid="uid://cdncqoq1eg3mm" path="res://Assets/Viyon01.png" id="3_tastr"]
+[ext_resource type="Animation" uid="uid://doejsubd20u80" path="res://anim/disappear.res" id="4_34bts"]
+[ext_resource type="Animation" uid="uid://br5xyirumr3es" path="res://anim/idle.res" id="5_ui3i8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sstdk"]
+size = Vector2(4, 43)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qo4ga"]
+radius = 4.07209
+
+[sub_resource type="Animation" id="Animation_mq86b"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Viyona:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-4, 6)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Viyona:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-2.68781]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Viyona:monitoring")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:is_attack")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Viyona/Sprite2D:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_5lryq"]
+resource_name = "attack"
+length = 0.4
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Viyona:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.15, 0.4),
+"transitions": PackedFloat32Array(0.5, 0.5, 0.3, 0.3),
+"update": 0,
+"values": [Vector2(-4, 6.76281), Vector2(18, -12.2372), Vector2(52.44, 47.303), Vector2(52.44, 47.303)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Viyona:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.15, 0.4),
+"transitions": PackedFloat32Array(0.5, 0.5, 0.3, 0.3),
+"update": 0,
+"values": [-2.68781, -0.137881, 2.32652, 2.32652]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_on_attack_done"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Viyona:monitoring")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.35, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [false, true, true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:is_attack")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_aryjq"]
+resource_name = "attack2"
+length = 0.4
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Viyona:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(0.3, 0.5),
+"update": 0,
+"values": [Vector2(52.44, 47.303), Vector2(75.875, 6.763)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Viyona:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(0.3, 0.5),
+"update": 0,
+"values": [2.32652, -2.68781]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_on_attack_done"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Viyona:monitoring")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.35, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [false, true, true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:is_attack")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_crxaw"]
+_data = {
+"RESET": SubResource("Animation_mq86b"),
+"attack": SubResource("Animation_5lryq"),
+"attack2": SubResource("Animation_aryjq"),
+"disappear": ExtResource("4_34bts"),
+"idle": ExtResource("5_ui3i8")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_36m6k"]
+animation = &"idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_mym6h"]
+animation = &"disappear"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_axorb"]
+animation = &"attack2"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_o37jj"]
+animation = &"attack"
+
+[sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_1o1w1"]
+
+[sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_o6ygn"]
+
+[sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_5vnem"]
+mix_mode = 1
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_vus4b"]
+graph_offset = Vector2(-268.913, -5.68735)
+nodes/Animation/node = SubResource("AnimationNodeAnimation_o37jj")
+nodes/Animation/position = Vector2(-373.333, 186.667)
+"nodes/Animation 2/node" = SubResource("AnimationNodeAnimation_36m6k")
+"nodes/Animation 2/position" = Vector2(-373.333, 26.6667)
+"nodes/Animation 3/node" = SubResource("AnimationNodeAnimation_mym6h")
+"nodes/Animation 3/position" = Vector2(213.333, 400)
+"nodes/Animation 4/node" = SubResource("AnimationNodeAnimation_axorb")
+"nodes/Animation 4/position" = Vector2(-80, 293.333)
+nodes/OneShot/node = SubResource("AnimationNodeOneShot_1o1w1")
+nodes/OneShot/position = Vector2(133.333, 133.333)
+nodes/attack/node = SubResource("AnimationNodeOneShot_o6ygn")
+nodes/attack/position = Vector2(-80, 53.3333)
+nodes/disappear/node = SubResource("AnimationNodeOneShot_5vnem")
+nodes/disappear/position = Vector2(346.667, 106.667)
+nodes/output/position = Vector2(613.333, 186.667)
+node_connections = [&"OneShot", 0, &"attack", &"OneShot", 1, &"Animation 4", &"attack", 0, &"Animation 2", &"attack", 1, &"Animation", &"disappear", 0, &"OneShot", &"disappear", 1, &"Animation 3", &"output", 0, &"disappear"]
+
+[node name="Viyon" type="CharacterBody2D"]
+position = Vector2(-17, -1.76281)
+collision_layer = 0
+script = ExtResource("1_0s3l5")
+offset_x = -7.0
+offset_y = -7.0
+float_off = 1.31973
+
+[node name="Viyona" type="Area2D" parent="."]
+position = Vector2(-4, 6)
+rotation = -2.68781
+collision_layer = 8
+collision_mask = 5
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Viyona"]
+shape = SubResource("RectangleShape2D_sstdk")
+
+[node name="Sprite2D" type="Sprite2D" parent="Viyona"]
+texture = ExtResource("2_25q2b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_qo4ga")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_tastr")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_crxaw")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_crxaw")
+}
+tree_root = SubResource("AnimationNodeBlendTree_vus4b")
+anim_player = NodePath("../AnimationPlayer")
+parameters/OneShot/active = false
+parameters/OneShot/internal_active = false
+parameters/OneShot/request = 0
+parameters/attack/active = false
+parameters/attack/internal_active = false
+parameters/attack/request = 0
+parameters/disappear/active = false
+parameters/disappear/internal_active = false
+parameters/disappear/request = 0
+
+[connection signal="body_entered" from="Viyona" to="." method="_on_attack_hit"]
